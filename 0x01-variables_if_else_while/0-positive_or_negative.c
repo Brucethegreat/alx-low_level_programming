@@ -3,28 +3,26 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
- *
- *Return: Always 0 (successs/correct)
+ * main - main block
+ * Description - assigns a random number and determines the last digit
+ * prints a phrase
+ * Return: Always 0 (Success)
  */
-
 int main(void)
-[
-int n;
+{
+	int n;
+	int z;
 
-srand(time(0));
-n = rand() - RAND_MAX / 2;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	z = n % 10;
 
-if (n==0)
-[
-printf("%i is zero\n", n);
-]
+	if (z > 5)
+		printf("Last digit of %i is %i and is greater than 5\n", n, z);
+	else if (z == 0)
+		printf("Last digit of %i is %i and is 0\n", n, z);
+	else
+		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, z);
 
-else
-[
-printf("%i is positive\n", n);
-]
-
-return (0);
-
-]
+	return (0);
+}
